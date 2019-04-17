@@ -6,6 +6,7 @@ import uuid
 
 import process_data as prodata
 # Initialize the Flask application
+@app.route("/")
 app = Flask(__name__)
 
 # This is the path to the templates directory
@@ -20,7 +21,7 @@ def allowed_file(filename):
 		   filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
 
-@app.route('/', methods=['GET', 'POST'])
+# @app.route('/', methods=['GET', 'POST'])
 def comp():
 	msg= None
 	if request.method == 'POST':
